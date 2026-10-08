@@ -24,6 +24,7 @@ pip install -r requirements.txt
 | `08_dynamic_programming.py` | Naive versus memoised Fibonacci, and the stairs problem |
 | `09_sympy_solve.py` | Solving recurrences symbolically with SymPy `rsolve` |
 | `10_euler.py` | Euler steps for y' = -y as a recurrence, and when they blow up |
+| `11_everyday.py` | A penny doubled for 30 days, a daily medicine dose, the R number and the Tower of Hanoi |
 
 The mortality numbers in `06` and `07` come from a Gompertz-Makeham formula with made-up parameters. They behave like a real life table but are not any country's actual data.
 
@@ -74,6 +75,14 @@ It goes down. Each premium earns more interest before the payout is due, so less
 <details><summary>Answer</summary>
 
 h = 2. The multiplier is 1 − h = −1, so the values flip between 1 and −1 forever. Any h above 2 grows, and any h between 0 and 2 shrinks.
+
+</details>
+
+**7.** In `11_everyday.py`, change the medicine dose to 100 mg with 75% cleared each day. What level do the peaks settle on?
+
+<details><summary>Answer</summary>
+
+The rule becomes level = 0.25 × level + 100. The fixed point is 100 / (1 − 0.25), about 133.3 mg, and the peaks settle there because the multiplier 0.25 is below 1.
 
 </details>
 

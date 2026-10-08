@@ -23,3 +23,15 @@ def months_to_zero(b0, r, pay):
 #
 for pay in (150, 100, 70, 65, 61, 60):
     print(f"pay {pay:3d}: {months_to_zero(3000, 0.02, pay):6.1f} months")
+#
+# short versions for one card: $3,000 owed, 2% a month, $70 paid
+def by_loop(n):
+    b = 3000.0
+    for _ in range(n):
+        b = b * 1.02 - 70
+    return b
+#
+def by_formula(n):
+    return 3500 - 500 * 1.02 ** n
+#
+print(by_loop(98), by_formula(98))   # both about 18.34
